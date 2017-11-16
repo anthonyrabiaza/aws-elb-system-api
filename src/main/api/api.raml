@@ -1,0 +1,17 @@
+#%RAML 1.0
+title: AWS ELB Management System API
+baseUri: http://localhost:8081/api
+
+/event:
+  description: Received an event sent by one API instance
+  post:
+    queryParameters: 
+      apiName:
+        type: string
+      ipAddress:
+        type: string
+      state:
+        type: string
+        enum: [start,stop]
+        
+      
