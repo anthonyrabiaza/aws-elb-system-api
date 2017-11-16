@@ -2,7 +2,7 @@
 
 This is a set of sample to automate the binding of Mule APIs with AWS ELB.
 1. A AWS System API which will configure AWS Target Group
-2. An example of an API using AWS ELB
+2. An example of an API using AWS ELB (source here: https://github.com/anthonyrabiaza/aws-elb-dummy-api)
 
 ## Getting Started
 
