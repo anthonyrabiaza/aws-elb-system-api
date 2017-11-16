@@ -83,16 +83,16 @@ Once the AWS System API is configured and deployed. You can deploy an API and ch
 - API logs
 
 ```
-2017-11-15 19:58:24,340 [[aws-elb-dummy-api].onStartup.stage1.02] INFO  com.mulesoft.mule.tools.startup.OnStartupOnShutdown - ## IS READY ACTIVITIES
-2017-11-15 19:58:24,345 [[aws-elb-dummy-api].onStartup.stage1.02] INFO  com.mulesoft.mule.tools.startup.ELBEvent - Calling AWS ELB System API (http://aws-elb-system-api-ant.au.cloudhub.io:8091/api/event?apiName=aws-elb-dummy-api&ipAddress=10.0.238.252,127.0.0.1&state=start)
-2017-11-15 19:58:25,101 [[aws-elb-dummy-api].onStartup.stage1.02] INFO  com.mulesoft.mule.tools.startup.ELBEvent - Response code:200
-2017-11-15 19:58:25,101 [[aws-elb-dummy-api].onStartup.stage1.02] INFO  com.mulesoft.mule.tools.startup.OnStartupOnShutdown - ## END OF IS READY ACTIVITIES
+INFO  com.mulesoft.mule.tools.startup.OnStartupOnShutdown - ## IS READY ACTIVITIES
+INFO  com.mulesoft.mule.tools.startup.ELBEvent - Calling AWS ELB System API (http://mule-worker-internal-aws-elb-system-api-ant.au.cloudhub.io:8091/api/event?apiName=aws-elb-dummy-api&ipAddress=10.0.238.252,127.0.0.1&state=start)
+INFO  com.mulesoft.mule.tools.startup.ELBEvent - Response code:200
+INFO  com.mulesoft.mule.tools.startup.OnStartupOnShutdown - ## END OF IS READY ACTIVITIES
 ```
 
 - AWS System API logs:
 
 ```
-2017-11-15 19:58:24,362 [[aws-elb-system-api].api-httpListenerConfig.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+INFO  org.mule.api.processor.LoggerMessageProcessor - 
 org.mule.DefaultMuleMessage
 {
   id=64c91b30-ca82-11e7-8083-000c296d8c98
@@ -132,7 +132,7 @@ Message properties:
 ```
 If the Application is not deployed in a VPC with an IP starting with *10.* the first IP will be used and the following message will be displayed:
 ```
-2017-11-15 19:58:24,367 [[aws-elb-system-api].api-httpListenerConfig.worker.01] ERROR com.mulesoft.mule.tools.aws.elb.ConfigureELBTargetGroup - No valid ip found in list (192.168.0.168,127.0.0.1), using first one
+ERROR com.mulesoft.mule.tools.aws.elb.ConfigureELBTargetGroup - No valid ip found in list (192.168.0.168,127.0.0.1), using first one
 ```
 
 You can see the update of the configuration in AWS Target Group:
@@ -142,16 +142,16 @@ You can see the update of the configuration in AWS Target Group:
 
 - API logs
 ```
-2017-11-15 20:15:39,534 [Mule.app.deployer.monitor.1.thread.1] INFO  com.mulesoft.mule.tools.startup.OnStartupOnShutdown - ## SHUTDOWN ACTIVITIES
-2017-11-15 20:15:39,534 [Mule.app.deployer.monitor.1.thread.1] INFO  com.mulesoft.mule.tools.startup.ELBEvent - Calling AWS ELB System API (http://aws-elb-system-api-ant.au.cloudhub.io:8091/api/event?apiName=aws-elb-dummy-api&ipAddress=10.0.238.252,127.0.0.1&state=stop)
-2017-11-15 20:15:40,203 [Mule.app.deployer.monitor.1.thread.1] INFO  com.mulesoft.mule.tools.startup.ELBEvent - Response code:200
-2017-11-15 20:15:40,203 [Mule.app.deployer.monitor.1.thread.1] INFO  com.mulesoft.mule.tools.startup.OnStartupOnShutdown - ## END OF SHUTDOWN ACTIVITIES
+INFO  com.mulesoft.mule.tools.startup.OnStartupOnShutdown - ## SHUTDOWN ACTIVITIES
+INFO  com.mulesoft.mule.tools.startup.ELBEvent - Calling AWS ELB System API (http://mule-worker-internal-aws-elb-system-api-ant.au.cloudhub.io:8091/api/event?apiName=aws-elb-dummy-api&ipAddress=10.0.238.252,127.0.0.1&state=stop)
+INFO  com.mulesoft.mule.tools.startup.ELBEvent - Response code:200
+INFO  com.mulesoft.mule.tools.startup.OnStartupOnShutdown - ## END OF SHUTDOWN ACTIVITIES
 ```
 
 - AWS System API logs:
 
 ```
-2017-11-15 20:15:39,547 [[aws-elb-system-api].api-httpListenerConfig.worker.01] INFO  org.mule.api.processor.LoggerMessageProcessor - 
+INFO  org.mule.api.processor.LoggerMessageProcessor - 
 org.mule.DefaultMuleMessage
 {
   id=cdcd7f20-ca84-11e7-8083-000c296d8c98
@@ -195,5 +195,5 @@ You can see the update of the configuration in AWS Target Group:
 
 If the Application is not deployed in a VPC with an IP starting with *10.* the first IP will be used and the following message will be displayed:
 ```
-2017-11-15 20:15:39,548 [[aws-elb-system-api].api-httpListenerConfig.worker.01] ERROR com.mulesoft.mule.tools.aws.elb.ConfigureELBTargetGroup - No valid ip found in list (192.168.0.168,127.0.0.1), using first one
+ERROR com.mulesoft.mule.tools.aws.elb.ConfigureELBTargetGroup - No valid ip found in list (192.168.0.168,127.0.0.1), using first one
 ```
